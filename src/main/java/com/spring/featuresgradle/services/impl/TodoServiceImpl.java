@@ -3,6 +3,7 @@ package com.spring.featuresgradle.services.impl;
 import com.spring.featuresgradle.documents.Todo;
 import com.spring.featuresgradle.repositories.TodoRepository;
 import com.spring.featuresgradle.services.TodoService;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,7 @@ public class TodoServiceImpl implements TodoService {
     }
 
     @Override
-    public Todo getById(String id) {
+    public Todo getById(ObjectId id) {
         return todoRepository.findById(id).orElse(null);
     }
 
